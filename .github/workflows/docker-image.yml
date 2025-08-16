@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:   # <-- steps abre a lista
+      - name: Run tests
+        run: mvn test
+        
       - name: Checkout do código
         uses: actions/checkout@v4
 
@@ -23,4 +26,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/minha-app:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/calculadora-api:latest
