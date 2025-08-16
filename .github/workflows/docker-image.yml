@@ -10,6 +10,7 @@ jobs:
 
     steps:   # <-- steps abre a lista
       - name: Run tests
+        working-directory: ./
         run: mvn test
         
       - name: Checkout do código
